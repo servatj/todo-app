@@ -1,14 +1,12 @@
-import { useContext } from "react";
-import { TodoContext } from "../context/TodoContext";
+import { useTodos } from "../hooks/useTodos";
 import { Todo } from "../interfaces/interfaces"
-
 interface props {
   todo: Todo
 }
 
 export const TodoItem = ({ todo } : props) => {
 
-  const { toogleTodo, removeTodo } = useContext(TodoContext);
+  const { toogleTodo, removeTodo } = useTodos();
 
   const handleDblClick = () => {
     toogleTodo(todo.id)
