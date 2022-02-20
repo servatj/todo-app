@@ -32,8 +32,12 @@ export const TodoProvider = ({ children }: Props) => {
     dispatch({ type: 'TOGGLE_TODO', payload: { id } });
   }
 
+  const removeTodo = (id: string) => {
+    dispatch({ type: 'REMOVE_TODO', payload: { id } });
+  }
+
   return (
-    <TodoContext.Provider value={{todoState, toogleTodo}}>
+    <TodoContext.Provider value={{todoState, toogleTodo, removeTodo}}>
       {children}
     </TodoContext.Provider>
   )
