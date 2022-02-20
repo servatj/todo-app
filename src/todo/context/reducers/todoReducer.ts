@@ -1,4 +1,3 @@
-import { strictEqual } from 'assert';
 import { TodoState, Todo } from '../../interfaces/interfaces';
 
 export type TodoAction =

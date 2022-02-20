@@ -1,8 +1,9 @@
 import { createContext } from "react";
-import { TodoState } from "../interfaces/interfaces";
+import { Todo, TodoState } from "../interfaces/interfaces";
 
 export type TodoContextProps = {
   todoState: TodoState,
+  addTodo: (todo: Todo) => void,
   toogleTodo: (id: string) => void,
   removeTodo: (id: string) => void
 }

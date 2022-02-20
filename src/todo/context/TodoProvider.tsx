@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { TodoState } from '../interfaces/interfaces';
+import { Todo, TodoState } from '../interfaces/interfaces';
 import { todoReducer } from './reducers/todoReducer';
 import { TodoContext } from './TodoContext'
 
@@ -36,8 +36,12 @@ export const TodoProvider = ({ children }: Props) => {
     dispatch({ type: 'REMOVE_TODO', payload: { id } });
   }
 
+  const addTodo = (todo: Todo) => {
+    dispatch({ type: 'ADD_TODO', payload:  todo  });
+  }
+
   return (
-    <TodoContext.Provider value={{todoState, toogleTodo, removeTodo}}>
+    <TodoContext.Provider value={{todoState, addTodo, toogleTodo, removeTodo}}>
       {children}
     </TodoContext.Provider>
   )
